@@ -7,6 +7,7 @@ import Logout from "./components/logout";
 import Manager from "./components/manager";
 import Developer from "./components/developer";
 import NotFound from "./components/notFound";
+import ViewDeveloper from "./components/viewDeveloper";
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
           <Route path="/logout" component={Logout} />
           <Route path="/register" component={Register} />
           <Route path="/manager" component={Manager} />
+          <Route
+            path="/viewDev/:id"
+            render={(props) => <ViewDeveloper {...props} />}
+          />
           <Route path="/developer" component={Developer} />
           <Route path="/not-found" component={NotFound} />
           <Redirect from="/" exact to="/register" />
